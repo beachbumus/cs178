@@ -61,6 +61,9 @@ public class ReadInt32BitLE {
 	public void setName(String fName) {
 		fileName = new String(fName);
 	}
+	public String getName() {
+		return  fileName; 
+	}
 	
 	public Integer getThreesCount()
 	{

@@ -41,18 +41,19 @@ public class ServletCountThrees extends HttpServlet {
 		if (session.isNew()) {
 			count++;
 		}
-		out.println("ServletCountThrees has been accessed " + count + " times. There are "+threesCount+"3s");
-/*
-		out.println("Working Directory = " + System.getProperty("user.dir"));
-		ReadInt32BitLE foo = new ReadInt32BitLE(System.getProperty("user.dir") + "/" + "threesData.bin")
-		foo.open
-		total3 int=0;
-		while !foo.EOF()
+		//out.println("ServletCountThrees has been accessed " + count + " times. There are "+threesCount+"3s");
+		//ReadInt32BitLE foo = new ReadInt32BitLE(System.getProperty("user.dir") + "/" + "threesData.bin");
+		ReadInt32BitLE foo = new ReadInt32BitLE("threesData.bin");
+		out.println("Filename= " + foo.getName().toString() );
+		foo.open();
+		int total3=0;
+
+		while (foo.EOF() == false)
 		{		
-			total3=foo.read()
+			total3=foo.read();
 		}
-		out.println("Total 3s :" + total3);
-*/
+		out.println("ServletCountThrees has been accessed " + count + " times." );
+		out.println("Total 3s: " + foo.getThreesCount().toString());
 		
 	}
 
