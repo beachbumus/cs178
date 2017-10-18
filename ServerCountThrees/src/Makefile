@@ -11,14 +11,16 @@ OBJECTS = readInt32BitLE.o ServerCountThrees.o
 $(TARGET): $(OBJECTS)
 	gcc $(OBJECTS) -o $@ 
 
-test:
+dist:
 	mkdir ../build
 	cp $(TARGET) ../build
 	cp ../data/threesData.bin ../build
-	cd ../build
-	./$(TARGET) &
 
-cleantest:
+start:
+	cd ../build
+	nohup ./$(TARGET) &
+
+cleandist:
 	-rm -rf ../build	
 clean: 
 	-rm -f ServerCountThrees 
