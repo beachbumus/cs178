@@ -6,6 +6,7 @@ pipeline {
                 sh 'cd ServletCountThrees; mvn --version; mvn package'
             }
         }
+/*
 	stage('QA') {
 	    steps {
 		input "Deploy to QA?"
@@ -18,5 +19,6 @@ pipeline {
 		sh 'echo "Deploying to Prod..."'
 	    }
 	}
+*/
     }
 }
